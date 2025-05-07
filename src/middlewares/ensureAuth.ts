@@ -14,6 +14,7 @@ export function ensureAuth(req: Request, res: Response, next: NextFunction): voi
     try{
         console.log('Token:', token);
         const decoded = jwt.verify(token, process.env.ACCESS_KEY || 'default_key');
+        (req as any).user = decoded;
         next();
     } catch (error) {
         console.error('JWT Error: ', error);

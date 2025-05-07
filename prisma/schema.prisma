@@ -17,6 +17,8 @@ model User {
   id Int @id @default(autoincrement())
   username String @unique
   password String
+
+  cart CartItem[]
 }
 
 model Product {
@@ -30,8 +32,11 @@ model Product {
 
 model CartItem {
   id Int @id @default(autoincrement())
-  productId Int
   quantity Int
 
+  productId Int
+  userId Int
+
+  user User @relation(fields: [userId], references: [id])
   product Product @relation(fields: [productId], references: [id])
 }
