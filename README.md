@@ -35,6 +35,8 @@ ACCESS_KEY="minha_chave_secreta"
 
 ```bash
 npx prisma migrate dev --name init
+```
+```bash
 npx prisma db seed
 ```
 
