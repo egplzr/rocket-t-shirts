@@ -20,6 +20,7 @@ app.controller("LojaController", function ($scope, $http, $window) {
     $scope.mostraLogin = false;
     $scope.errorMessage = "";
     $scope.successMessage = "";
+    $scope.filtro = "";
 
     // Verificar se já existe um token armazenado
     $scope.token = localStorage.getItem("token");
@@ -89,10 +90,12 @@ app.controller("LojaController", function ($scope, $http, $window) {
         $scope.carrinho = [];
     };
 
-    // Buscar produtos da API
+    // Modificar a função getProdutos para atualizar automaticamente o filtro
     $scope.getProdutos = function () {
         $http.get(API + "/products").then(res => {
             $scope.produtos = res.data;
+            // Opcionalmente, limpar o filtro quando novos produtos são carregados
+            // $scope.filtro = "";
         }).catch(err => {
             console.error("Erro ao buscar produtos:", err);
         });

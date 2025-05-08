@@ -1,43 +1,25 @@
-/* Estilos gerais */
 body {
     font-family: 'Arial', sans-serif;
 }
-
-/* Banner */
 .banners img {
     height: 500px;
     object-fit: cover;
 }
-
-/* Linhas decorativas */
-.linha {
-    height: 2px;
-    background-color: #000;
-    flex-grow: 1;
-    margin: 0 15px;
-}
-
 .nov {
     white-space: nowrap;
 }
-
-/* Cards de produtos */
 .card {
     transition: transform 0.3s, box-shadow 0.3s;
     margin-bottom: 20px;
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 .card-img-top {
     height: 200px;
     object-fit: contain;
 }
-
-/* Seções */
 .section-title {
     position: relative;
     margin-bottom: 30px;
@@ -45,7 +27,6 @@ body {
     text-align: center;
     font-weight: bold;
 }
-
 .section-title:after {
     content: '';
     position: absolute;
@@ -56,47 +37,70 @@ body {
     height: 3px;
     background-color: #000;
 }
-
-/* Botão cadastrar */
 .btn-cadastrar {
     display: block;
     margin: 30px auto;
     padding: 10px 25px;
     font-size: 18px;
 }
-
-/* Footer icons */
 footer .bi {
     cursor: pointer;
     transition: color 0.3s;
 }
-
 footer .bi:hover {
     color: #0d6efd;
 }
-
-/* Estilos para o carrinho */
 .btn-primary {
     background-color: #0d6efd;
     border-color: #0d6efd;
 }
-
 .btn-primary:hover {
     background-color: #0b5ed7;
     border-color: #0a58ca;
 }
+.navbar-brand {
+    font-size: 1.5rem !important;
+}
+@media (max-width: 992px) {
+    .search-form {
+        width: 100% !important;
+        margin: 1rem 0;
+        order: 3;
+    }
 
-/* Responsividade */
+    .navbar-container {
+        flex-wrap: wrap;
+    }
+
+    .brand-container {
+        margin-right: auto;
+    }
+
+    .icons-container {
+        margin-left: auto;
+    }
+}
 @media (max-width: 768px) {
     .banners img {
         height: 300px;
     }
     
     .card {
+        width: 100% !important;
         margin: 0 auto 20px;
     }
     
-    .sobre-loja {
-        flex-direction: column;
+    .product-card {
+        margin-bottom: 2rem;
+    }
+    
+    .linha {
+        width: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banners img {
+        height: 200px;
     }
 }
