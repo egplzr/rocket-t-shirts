@@ -255,6 +255,8 @@
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">{{ p.name }}</h5>
+                                            <img ng-src="http://localhost:3000{{ p.image }}" alt="{{ p.name }}"
+                                                width="100">
                                             <p class="card-text fw-bold">R$ {{ p.price }}</p>
                                             <p class="card-text text-muted">{{ p.description }}</p>
                                             <button class="btn btn-primary" ng-click="adicionarAoCarrinho(p)">
@@ -291,6 +293,10 @@
                                     <label for="descricaoProduto" class="form-label">Descrição</label>
                                     <textarea class="form-control" id="descricaoProduto" rows="3"
                                         ng-model="novoProduto.description"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="imagemInput" class="form-label">Imagem</label>
+                                    <input type="file" id="imagemInput" placeholder="Caminho da imagem">
                                 </div>
                                 <button type="submit" class="btn btn-success">
                                     <i class="bi bi-check2-circle me-1"></i> Cadastrar
@@ -369,6 +375,11 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
     <script src="./script/app.js"></script>
+    <script src="./script/services/auth.service.js"></script>
+    <script src="./script/services/product.service.js"></script>
+    <script src="./script/services/cart.service.js"></script>
+    <script src="./script/controllers/loja.controller.js"></script>
+
 
 </body>
 

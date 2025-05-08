@@ -14,6 +14,7 @@ class ProductController {
     static async create(req: Request, res: Response): Promise<void> {
         try{
             const {name, price, description} = req.body;
+            const image = (req as any).file ? `/uploads/${(req as any).file.filename}` : null;
 
             if(!name || !price || !description) {
                 res.status(400).json({error: 'Missing fields'});
@@ -24,7 +25,8 @@ class ProductController {
                 data: {
                     name,
                     price: parseFloat(price),
-                    description
+                    description,
+                    image
                 }
             });
 
