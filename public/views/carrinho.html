@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
-<body ng-controller="LojaController">
+<body ng-controller="CarrinhoController">
     <header id="header">
         <nav class="navbar navbar-expand-lg bg-black text-white p-3 p-lg-4">
             <div class="container-fluid">
@@ -87,24 +87,37 @@
                     <button class="btn btn-outline-primary mb-3" ng-click="verCarrinho()">
                         <i class="bi bi-eye me-1"></i> Ver Carrinho
                     </button>
-
                     <div class="table-responsive" ng-if="carrinho && carrinho.length > 0">
-                        <table class="table table-hover">
-                            <thead>
+                        <table class="table align-middle">
+                            <thead class="table-dark">
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Imagem</th>
                                     <th>Produto</th>
+                                    <th>Preço</th>
                                     <th>Quantidade</th>
+                                    <th>Total</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="c in carrinho">
-                                    <td>{{ c.productId }}</td>
-                                    <td>Produto: {{ c.productId }}</td>
-                                    <td>Quantidade: {{ c.quantity }}</td>
                                     <td>
-                                        <button class="btn btn-sm btn-danger" ng-click="removerDoCarrinho(c.productId)">
+                                        <img ng-src="http://localhost:3000{{ c.product.image }}"
+                                            alt="{{ c.product.name }}" width="60">
+                                    </td>
+                                    <td>{{ c.product.name }}</td>
+                                    <td>R$ {{ c.product.price | number:2 }}</td>
+                                    <td>
+                                        <input type="number" ng-model="c.novaQuantidade" min="1" class="form-control"
+                                            style="width: 80px;" />
+                                    </td>
+                                    <td>R$ {{ c.product.price * c.quantity | number:2 }}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary me-2"
+                                            ng-click="atualizarQuantidade(c.id, c.novaQuantidade)">
+                                            <i class="bi bi-arrow-repeat"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-danger" ng-click="removerDoCarrinho(c.id)">
                                             <i class="bi bi-trash"></i>
                                         </button>
                                     </td>
@@ -112,6 +125,7 @@
                             </tbody>
                         </table>
                     </div>
+
                     <p ng-if="!carrinho || carrinho.length === 0" class="text-center text-muted">
                         Seu carrinho está vazio.
                     </p>
@@ -177,6 +191,11 @@
         crossorigin="anonymous"></script>
 
     <script src="../script/app.js"></script>
+    <script src="../script/services/auth.service.js"></script>
+    <script src="../script/services/cart.service.js"></script>
+    <script src="../script/controllers/carrinho.controller.js"></script>
+
+
 </body>
 
 </html>
