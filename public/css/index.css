@@ -1,0 +1,102 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Banner */
+.banners img {
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Linhas decorativas */
+.linha {
+    height: 2px;
+    background-color: #000;
+    flex-grow: 1;
+    margin: 0 15px;
+}
+
+.nov {
+    white-space: nowrap;
+}
+
+/* Cards de produtos */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Seções */
+.section-title {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #000;
+}
+
+/* Botão cadastrar */
+.btn-cadastrar {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 25px;
+    font-size: 18px;
+}
+
+/* Footer icons */
+footer .bi {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+footer .bi:hover {
+    color: #0d6efd;
+}
+
+/* Estilos para o carrinho */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banners img {
+        height: 300px;
+    }
+    
+    .card {
+        margin: 0 auto 20px;
+    }
+    
+    .sobre-loja {
+        flex-direction: column;
+    }
+}
