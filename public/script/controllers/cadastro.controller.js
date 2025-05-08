@@ -6,7 +6,7 @@ angular.module("lojaApp").controller("CadastroController", function ($scope, $wi
         password: '',
         confirmPassword: ''
     };
-    
+
     $scope.errorMessage = "";
     $scope.successMessage = "";
 
@@ -22,7 +22,7 @@ angular.module("lojaApp").controller("CadastroController", function ($scope, $wi
                 $scope.successMessage = "Cadastro realizado com sucesso!";
                 $scope.errorMessage = "";
                 setTimeout(() => {
-                    $window.location.href = '../index.html';
+                    $window.location.href = '../../index.html';
                 }, 2000);
             })
             .catch((err) => {

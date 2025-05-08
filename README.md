@@ -1,6 +1,6 @@
 # About the project
 
-This API was developed for a full-stack challenge. This is the backend of a e-commerce app.
+This API was developed for a full-stack challenge. This is the backend and frontend of a e-commerce app.
 In this file you will find how to install and run the application.
 
 ## Prerequisites
@@ -46,6 +46,21 @@ npx prisma db seed
 npm run dev
 ```
 
+6. **Open the application**
+
+Open the folder /public via terminal, then run a simple static server.
+_Make sure that the API is running before using the frontend_
+
+```bash
+cd public
+```
+
+```bash
+npx serve .
+```
+
+_To stop the servers press Ctrl + C on the terminal_
+
 ## Technologies Used
 
 - Node.js
@@ -53,6 +68,6 @@ npm run dev
 - Express
 - SQLite
 - Prisma ORM
-- JWT (Autenticação)
-- Dotenv (Variáveis de ambiente)
-- Bcrypt (Criptografia de senhas)
+- JWT
+- Dotenv
+- Bcrypt

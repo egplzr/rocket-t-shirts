@@ -1,4 +1,3 @@
-// controllers/CarrinhoController.js
 angular.module("lojaApp").controller("CarrinhoController", function ($scope, CartService, AuthService) {
     $scope.carrinho = [];
     $scope.token = AuthService.getToken();
